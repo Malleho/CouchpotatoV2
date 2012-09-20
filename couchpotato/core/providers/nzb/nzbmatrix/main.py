@@ -37,7 +37,7 @@ class NZBMatrix(NZBProvider, RSS):
             return results
 
         cat_ids = ','.join(['%s' % x for x in self.getCatId(quality.get('identifier'))])
-        q = '%s %s %s' % (simplifyString(getTitle(movie['library'])), movie['library']['year'], quality.get('identifier'))
+        q = '%s %s' % (simplifyString(getTitle(movie['library'])), quality.get('identifier'))
 
         arguments = tryUrlencode({
             'term': q,
